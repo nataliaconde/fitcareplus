@@ -1,5 +1,9 @@
 <resources>
   <string name="app_name">FitCarePlus</string>
+  <string name="back4app_server_url">https://fitcare.back4app.io</string>
+  <string name="back4app_app_id">K2X23TQtwmdx6g5jFORG7bApV6bCqccbFrll2Lfs</string>
+  <string name="back4app_client_key">ZIkLbUcHQCm3I2DbXK6lab64WrgyInFV62jds3cQ</string>
+
   <string name="navigation_drawer_open">Open navigation drawer</string>
   <string name="navigation_drawer_close">Close navigation drawer</string>
   <string name="nav_header_title">Android Studio</string>
