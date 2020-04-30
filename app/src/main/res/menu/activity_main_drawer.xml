@@ -12,6 +12,10 @@
       android:id="@+id/nav_user_details"
       android:icon="@drawable/account_24dp"
       android:title="@string/menu_user" />
+    <item
+      android:id="@+id/nav_connections"
+      android:icon="@drawable/ic_bluetooth_24dp"
+      android:title="@string/menu_connection" />
   </group>
 
   <item android:title="@string/nav_header_communicate">

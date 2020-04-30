@@ -15,4 +15,17 @@
   <string name="menu_home">Início</string>
   <string name="menu_user">Minha conta</string>
   <string name="menu_send">Contate-nos</string>
+  <string name="menu_connection">Conectar dispositivo</string>
+
+  <string name="username">Usuário</string>
+  <string name="password">Senha</string>
+  <string name="btnLogin">Acessar</string>
+  <string name="forgotPassword">Esqueceu sua senha?</string>
+  <string name="btnForgotPassword">Trocar senha</string>
+  <string name="edtViewError">Preencha esse campo!</string>
+  <string name="errorLoginParse">Operação não realizada! Tente fazer o login novamente.</string>
+
+  <string name="welcomeText">Bem-vindo,</string>
+  <string name="welcomeDescriptionText">Acessa a sua conta para continuar</string>
+
 </resources>
