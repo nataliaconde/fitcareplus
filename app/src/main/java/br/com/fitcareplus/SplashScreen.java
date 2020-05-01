@@ -19,9 +19,20 @@ public class SplashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(getBaseContext(), LoginScreen.class));
-                finish();
+
+                if ((getIntent().getFlags() & Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT) != 0) {
+                    // Activity was brought to front and not created,
+                    // Thus finishing this will get us to the last viewed activity
+                    finish();
+                    return;
+                } else {
+
+                    Intent intent = new Intent(SplashScreen.this, LoginScreen.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    finish();
+                    startActivity(intent);
+                }
             }
-        }, 5000);
+        }, 2000);
     }
 }

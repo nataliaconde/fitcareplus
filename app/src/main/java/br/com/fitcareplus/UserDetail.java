@@ -21,5 +21,7 @@ public class UserDetail extends BaseActivity {
         // add the custom layout of this activity to frame layout.
         frameLayout.addView(activityView);
         // now you can do all your other stuffs
+
+        this.getSupportActionBar().setTitle(getString(R.string.menu_user));
     }
 }

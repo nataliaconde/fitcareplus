@@ -90,7 +90,7 @@
         android:text="@string/btnLogin"
         android:textColor="@color/colorPrimaryDark" />
 
-      <TextView
+      <Button
         android:id="@+id/txtForgotPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -101,6 +101,7 @@
         android:textAllCaps="true"
         android:textColor="#80555353"
         android:textSize="15sp"
+        android:background="@android:color/transparent"
         android:textStyle="bold" />
 
     </RelativeLayout>

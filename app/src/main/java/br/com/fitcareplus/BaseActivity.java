@@ -1,7 +1,9 @@
 package br.com.fitcareplus;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
@@ -11,6 +13,7 @@ import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 
@@ -20,6 +23,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
+import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
@@ -41,14 +45,13 @@ import java.net.URL;
 public class BaseActivity extends AppCompatActivity
   implements NavigationView.OnNavigationItemSelectedListener {
 
-
-  public DrawerLayout drawerLayout;
-  public ListView drawerList;
-  private ActionBarDrawerToggle drawerToggle;
-
   @Override
   protected void onCreate(Bundle savedInstanceState) {
+
     super.onCreate(savedInstanceState);
+
+    SharedPreferences saved_values = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+
     setContentView(R.layout.activity_base);
     Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
@@ -64,27 +67,30 @@ public class BaseActivity extends AppCompatActivity
     TextView userEmail = (TextView) navigationView.getHeaderView(0).findViewById(R.id.userEmail);
     ImageView userPhoto = (ImageView) navigationView.getHeaderView(0).findViewById(R.id.userImage);
 
-    setUserValues(userName, userEmail, userPhoto);
+    setUserValues(userName, userEmail, userPhoto, saved_values);
   }
 
-  private void setUserValues(TextView userName, TextView userEmail, ImageView userPhoto) {
-    ParseUser currentUser = ParseUser.getCurrentUser();
-    if (currentUser != null) {
-      if(currentUser.getUsername() != null) userName.setText(currentUser.getUsername());
-      if(currentUser.getEmail() != null) userEmail.setText(currentUser.getEmail());
-      if(currentUser.getParseObject("user") != null) {
-        try {
-          ParseObject pointerUser = (ParseObject) currentUser.get("user");
-          ParseFile url = pointerUser.fetchIfNeeded().getParseFile("file");
-          Log.d("debug", String.valueOf(url.getUrl()));
-          new DownLoadImageTask(userPhoto).execute(url.getUrl());
-        } catch (ParseException e) {
-
-        }
-
-      }
-    } else {
+  private void setUserValues(final TextView userName, final TextView userEmail, final ImageView userPhoto, final SharedPreferences saved_values) {
+    if (saved_values.getString("username", "") == null){
       changeActivity(LoginScreen.class);
+    } else {
+      ParseUser.becomeInBackground(saved_values.getString("sessiontoken", "") , new LogInCallback() {
+        public void done(ParseUser user, ParseException e) {
+          if (user != null) {
+            if(saved_values.getString("username", "") != null) userName.setText(user.getUsername());
+            if(saved_values.getString("useremail", "") != null) userEmail.setText(user.getEmail());
+
+            if(user.getParseObject("user") != null) {
+              try {
+                ParseObject pointerUser = (ParseObject) user.get("user");
+                ParseFile url = pointerUser.fetchIfNeeded().getParseFile("file");
+                new DownLoadImageTask(userPhoto).execute(url.getUrl());
+              } catch (ParseException error) {  }  }
+          } else {
+            changeActivity(LoginScreen.class);
+          }
+        }
+      });
     }
   }
 

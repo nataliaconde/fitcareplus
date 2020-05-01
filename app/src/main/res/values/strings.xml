@@ -23,9 +23,17 @@
   <string name="forgotPassword">Esqueceu sua senha?</string>
   <string name="btnForgotPassword">Trocar senha</string>
   <string name="edtViewError">Preencha esse campo!</string>
-  <string name="errorLoginParse">Operação não realizada! Tente fazer o login novamente.</string>
+  <string name="errorLoginParse">Usuário/senha não coincidem!</string>
 
   <string name="welcomeText">Bem-vindo,</string>
   <string name="welcomeDescriptionText">Acessa a sua conta para continuar</string>
 
+  <string name="instructionsForgotPassword">Insira seu e-mail no campo abaixo para que as instruções sejam enviadas.</string>
+  <string name="sendForgotPassword">Enviar</string>
+  <string name="invalidResetPassword">E-mail não enviado!</string>
+  <string name="positiveFeedback">Ok!</string>
+  <string name="textEmailVerificationSent">As instruções foram enviadas para sua caixa de entrada!</string>
+  <string name="textEmailVerificationNotSent">Algo deu errado. Tente novamente mais tarde!</string>
+  <string name="validResetPassword">E-mail enviado</string>
 </resources>
+
