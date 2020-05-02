@@ -4,37 +4,39 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:id="@+id/activity_frame"
-    android:background="@color/colorAccentBackground"
+    android:background="@color/colorAccent"
     tools:context=".UserDetail">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="50dp">
 
         <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="60dp"
-            android:text="TextView"
+            android:id="@+id/txtTitle"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/name"
+            android:textColor="@color/colorBlank"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:fontFamily="sans-serif-smallcaps"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/edtEmail"
-            android:layout_width="fill_parent"
+            android:id="@+id/edtUsername"
+            android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="50dp"
-            android:layout_marginRight="50dp"
+            android:layout_marginStart="8dp"
             android:background="@drawable/edittextbackground"
             android:ems="10"
             android:inputType="textEmailAddress"
@@ -43,8 +45,80 @@
             android:textColor="@color/colorBlank"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/txtTitle"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+
+        <TextView
+            android:id="@+id/txtEmail"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/email"
+            android:textColor="@color/colorBlank"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:fontFamily="sans-serif-smallcaps"
+            app:layout_constraintStart_toStartOf="@+id/edtUsername"
+            app:layout_constraintTop_toBottomOf="@+id/edtUsername" />
+
+        <EditText
+            android:id="@+id/edtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/edittextbackground"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textColor="@color/colorBlank"
+            app:layout_constraintStart_toStartOf="@+id/txtEmail"
+            app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
+
+
+        <Button
+            android:id="@+id/btnSendForgotPasswordEmail"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="50dp"
+            android:background="@color/colorPrimaryDark"
+            android:padding="10dp"
+            android:text="Atualizar"
+            android:textColor="@color/colorBlank"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtDescription" />
-    </LinearLayout>
+            app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="Parentes cadastrados"
+            android:textColor="@color/colorBlank"
+            app:layout_constraintStart_toStartOf="@+id/edtEmail"
+            app:layout_constraintTop_toBottomOf="@+id/btnSendForgotPasswordEmail" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="23dp"
+            android:layout_height="21dp"
+            android:layout_marginEnd="8dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintEnd_toEndOf="@+id/edtEmail"
+            app:layout_constraintTop_toTopOf="@+id/textView"
+            android:src="@drawable/add_user_24dp"/>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="50dp"
+            app:layout_constraintEnd_toEndOf="@+id/edtEmail"
+            app:layout_constraintTop_toTopOf="@+id/textView"></ListView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

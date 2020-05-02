@@ -124,13 +124,13 @@ public class BaseActivity extends AppCompatActivity
   @SuppressWarnings("StatementWithEmptyBody")
   @Override
   public boolean onNavigationItemSelected(MenuItem item) {
-    String admin = "admin";
+    String admin = "pacient";
     int id = item.getItemId();
     if (id == R.id.nav_home) {
       if(admin.equals("admin")){
         changeActivity(DoctorView.class);
       } else {
-        changeActivity(PacientView.class);
+        changeActivity(PacientDetail.class);
       }
     } else if (id == R.id.nav_user_details) {
       changeActivity(UserDetail.class);

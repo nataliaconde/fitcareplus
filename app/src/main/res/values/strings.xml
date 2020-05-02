@@ -16,8 +16,12 @@
   <string name="menu_user">Minha conta</string>
   <string name="menu_send">Contate-nos</string>
   <string name="menu_connection">Conectar dispositivo</string>
+  <string name="myPacients">Meus pacientes</string>
+  <string name="addNewPacient">Novo paciente</string>
 
   <string name="username">Usuário</string>
+  <string name="name">Nome</string>
+  <string name="email">E-mail</string>
   <string name="password">Senha</string>
   <string name="btnLogin">Acessar</string>
   <string name="forgotPassword">Esqueceu sua senha?</string>
@@ -35,5 +39,10 @@
   <string name="textEmailVerificationSent">As instruções foram enviadas para sua caixa de entrada!</string>
   <string name="textEmailVerificationNotSent">Algo deu errado. Tente novamente mais tarde!</string>
   <string name="validResetPassword">E-mail enviado</string>
+    <string name="bluetooth_active">Conectado:  </string>
+  <string name="devices">Dispositivos</string>
+    <string name="deviceDoesntSupportBluetooth">O dispositivo não suporta Bluetooth</string>
+  <string name="contactSupportTeam">Fale conosco</string>
+  <string name="notAbleToConnect">Não foi possível conectar</string>
 </resources>
 

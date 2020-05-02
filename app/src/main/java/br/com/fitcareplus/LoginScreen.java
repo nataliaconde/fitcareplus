@@ -49,6 +49,7 @@ public class LoginScreen extends AppCompatActivity {
     btnLogin.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
+        btnLogin.setEnabled(false);
         if(!isEmptyString(username) && !isEmptyString(password)){
           ParseUser.logInInBackground(username.getText().toString(), password.getText().toString(), new LogInCallback() {
             public void done(ParseUser user, ParseException e) {
@@ -67,10 +68,20 @@ public class LoginScreen extends AppCompatActivity {
 
                 editor.commit();
 
-                Intent i = new Intent(LoginScreen.this, PacientView.class);
+                btnLogin.setEnabled(true);
+
+                String admin = "pacient";
+                Intent i;
+                if(!admin.equals("admin")){
+                  i = new Intent(LoginScreen.this, PacientDetail.class);
+                  i.putExtra("name", user.getUsername());
+                } else {
+                  i = new Intent(LoginScreen.this, DoctorView.class);
+                }
                 startActivity(i);
               } else {
                 Toast.makeText(LoginScreen.this, getString(R.string.errorLoginParse), Toast.LENGTH_LONG).show();
+                btnLogin.setEnabled(false);
               }
             }
           });

@@ -6,4 +6,5 @@
   <color name="colorAccentBackground">#F18A8A</color>
   <color name="colorBlank">#ffffff</color>
   <color name="colorGrey">#9C9C9C</color>
+  <color name="colorBluetooth">#0060ae</color>
 </resources>

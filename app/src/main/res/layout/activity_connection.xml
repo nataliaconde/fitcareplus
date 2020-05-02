@@ -4,6 +4,98 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBlank"
+    android:orientation="vertical"
+    android:paddingTop="60dp"
     tools:context=".Connection">
+
+    <Switch
+        android:id="@+id/bluetoothConnection"
+        android:layout_width="60dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="232dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imagebluetoothConnection"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imagebluetoothConnection"
+        android:layout_width="41dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_bluetooth_24dp"
+        tools:ignore="VectorDrawableCompat" />
+
+    <ImageView
+        android:id="@+id/imagebluetoothDiscoverable"
+        android:layout_width="41dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="256dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imagebluetoothConnection"
+        app:srcCompat="@drawable/ic_bluetooth_searching_black_24dp"
+        tools:ignore="VectorDrawableCompat" />
+
+    <Switch
+        android:id="@+id/switchDiscoverable"
+        android:layout_width="64dp"
+        android:layout_height="39dp"
+        android:layout_marginEnd="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imagebluetoothDiscoverable"
+        app:layout_constraintTop_toTopOf="@+id/imagebluetoothDiscoverable" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:text="@string/devices"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/gifImageView"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifImageView"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="72dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/loading"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/bluetoothConnection"
+        tools:ignore="MissingConstraints" />
+
+    <ListView
+        android:id="@+id/listview_devices"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"></ListView>
+
+
+    <TextView
+        android:id="@+id/isEmpty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Nenhum dispositivo encontrado"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/listview_devices"
+        app:layout_constraintStart_toStartOf="@+id/listview_devices"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
