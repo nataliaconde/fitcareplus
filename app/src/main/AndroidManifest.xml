@@ -26,9 +26,9 @@
         android:allowBackup="true"
         android:alwaysRetainTaskState="true"
         android:exported="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/fitcare_logo180x180"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/fitcare_logo180x180"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".PacientDetail"

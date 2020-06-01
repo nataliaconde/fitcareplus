@@ -124,18 +124,16 @@ public class BaseActivity extends AppCompatActivity
   @SuppressWarnings("StatementWithEmptyBody")
   @Override
   public boolean onNavigationItemSelected(MenuItem item) {
-    String admin = "pacient";
+    ParseUser user = ParseUser.getCurrentUser();
     int id = item.getItemId();
     if (id == R.id.nav_home) {
-      if(admin.equals("admin")){
+      if(user != null && user.get("profile").equals("doctor")){
         changeActivity(DoctorView.class);
       } else {
         changeActivity(PacientDetail.class);
       }
     } else if (id == R.id.nav_user_details) {
       changeActivity(UserDetail.class);
-    } else if (id == R.id.nav_send) {
-      changeActivity(Contact.class);
     } else if (id == R.id.nav_connections) {
       changeActivity(Connection.class);
     }

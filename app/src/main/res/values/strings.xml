@@ -1,6 +1,6 @@
 <resources>
-  <string name="app_name">FitCarePlus</string>
-  <string name="back4app_server_url">https://fitcare.back4app.io</string>
+  <string name="app_name">FitCare</string>
+  <string name="back4app_server_url">https://fitcareplus.back4app.io</string>
   <string name="back4app_app_id">K2X23TQtwmdx6g5jFORG7bApV6bCqccbFrll2Lfs</string>
   <string name="back4app_client_key">ZIkLbUcHQCm3I2DbXK6lab64WrgyInFV62jds3cQ</string>
 
@@ -27,6 +27,7 @@
   <string name="forgotPassword">Esqueceu sua senha?</string>
   <string name="btnForgotPassword">Trocar senha</string>
   <string name="edtViewError">Preencha esse campo!</string>
+  <string name="edtEmailIncorrectFormat">Formato de e-mail incorreto!</string>
   <string name="errorLoginParse">Usuário/senha não coincidem!</string>
 
   <string name="welcomeText">Bem-vindo,</string>
@@ -44,5 +45,6 @@
     <string name="deviceDoesntSupportBluetooth">O dispositivo não suporta Bluetooth</string>
   <string name="contactSupportTeam">Fale conosco</string>
   <string name="notAbleToConnect">Não foi possível conectar</string>
+  <string name="btnChangePhoto">Trocar foto</string>
 </resources>
 
