@@ -104,6 +104,16 @@
         android:background="@android:color/transparent"
         android:textStyle="bold" />
 
+      <ImageView
+          android:id="@+id/btnAboutUs"
+          android:layout_width="73dp"
+          android:layout_height="61dp"
+          android:layout_below="@id/txtForgotPassword"
+          android:layout_alignEnd="@+id/txtForgotPassword"
+          android:layout_marginTop="54dp"
+          android:layout_marginEnd="0dp"
+          app:srcCompat="@drawable/aboutuspage" />
+
     </RelativeLayout>
   </LinearLayout>
 

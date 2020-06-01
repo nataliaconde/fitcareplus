@@ -16,12 +16,9 @@
         android:padding="50dp">
 
         <TextView
-            android:id="@+id/txtTitle"
+            android:id="@+id/txtTitle2"
             android:layout_width="200dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="8dp"
+            android:layout_height="wrap_content"
             android:text="@string/name"
             android:textColor="@color/colorBlank"
             android:textSize="20sp"
@@ -29,30 +26,28 @@
             app:fontFamily="sans-serif-smallcaps"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toEndOf="@+id/imgUser"
+            app:layout_constraintTop_toTopOf="@+id/imgUser" />
 
         <EditText
             android:id="@+id/edtUsername"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginStart="8dp"
+            android:layout_width="198dp"
+            android:layout_height="36dp"
             android:background="@drawable/edittextbackground"
             android:ems="10"
             android:inputType="textEmailAddress"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
             android:textColor="@color/colorBlank"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/txtTitle"
-            app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+            app:layout_constraintEnd_toEndOf="@+id/txtTitle2"
+            app:layout_constraintHorizontal_bias="0.909"
+            app:layout_constraintStart_toEndOf="@+id/imgUser"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitle2" />
 
         <TextView
             android:id="@+id/txtEmail"
             android:layout_width="200dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="24dp"
+            android:layout_height="wrap_content"
             android:text="@string/email"
             android:textColor="@color/colorBlank"
             android:textSize="20sp"
@@ -63,25 +58,26 @@
 
         <EditText
             android:id="@+id/edtEmail"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginStart="8dp"
+            android:layout_width="198dp"
+            android:layout_height="36dp"
             android:background="@drawable/edittextbackground"
             android:ems="10"
             android:inputType="textEmailAddress"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
             android:textColor="@color/colorBlank"
+            app:layout_constraintEnd_toEndOf="@+id/txtEmail"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/txtEmail"
             app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
 
 
         <Button
-            android:id="@+id/btnSendForgotPasswordEmail"
+            android:id="@+id/btnUpdateData"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="84dp"
             android:layout_marginEnd="50dp"
             android:background="@color/colorPrimaryDark"
             android:padding="10dp"
@@ -92,32 +88,30 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:text="Parentes cadastrados"
-            android:textColor="@color/colorBlank"
-            app:layout_constraintStart_toStartOf="@+id/edtEmail"
-            app:layout_constraintTop_toBottomOf="@+id/btnSendForgotPasswordEmail" />
-
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="23dp"
-            android:layout_height="21dp"
-            android:layout_marginEnd="8dp"
-            android:background="@android:color/transparent"
-            app:layout_constraintEnd_toEndOf="@+id/edtEmail"
-            app:layout_constraintTop_toTopOf="@+id/textView"
-            android:src="@drawable/add_user_24dp"/>
-
-        <ListView
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/imgUser"
+            android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginTop="50dp"
-            app:layout_constraintEnd_toEndOf="@+id/edtEmail"
-            app:layout_constraintTop_toTopOf="@+id/textView"></ListView>
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="52dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/txtTitle2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/edittextbackground" />
+
+        <Button
+            android:id="@+id/btnUpdatePhoto"
+            android:layout_width="88dp"
+            android:layout_height="33dp"
+            android:background="@android:color/white"
+            android:text="@string/btnChangePhoto"
+            android:textColor="@color/colorPrimary"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/imgUser"
+            app:layout_constraintStart_toStartOf="@+id/imgUser"
+            app:layout_constraintTop_toBottomOf="@+id/imgUser" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

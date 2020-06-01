@@ -2,6 +2,7 @@ package br.com.fitcareplus;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -9,7 +10,9 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +26,7 @@ import com.anychart.charts.Gantt;
 import com.anychart.charts.Pie;
 import com.anychart.enums.Align;
 import com.anychart.enums.LegendLayout;
+import com.parse.ParseUser;
 
 import org.w3c.dom.Text;
 
@@ -30,6 +34,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PacientDetail extends BaseActivity {
+
+
+    // Defined Array values to show in ListView
+    String[] values = new String[] { "Android List View",
+            "Adapter implementation",
+            "Simple List View In Android",
+            "Create List View Android",
+            "Android Example",
+            "List View Source Code",
+            "List View Array Adapter",
+            "Android Example List View"
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +61,15 @@ public class PacientDetail extends BaseActivity {
 
         Intent intent = getIntent();
 
-        String admin = "admin";
-        if(!admin.equals("admin")){
+        ListView listView = (ListView) findViewById(R.id.listViewHistory);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, android.R.id.text1, values);
+
+        listView.setAdapter(adapter);
+
+        ParseUser user = ParseUser.getCurrentUser();
+        if(user == null ){
             onBackPressed();
         }
 

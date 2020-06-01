@@ -152,11 +152,12 @@ public class Connection extends BaseActivity {
                 if(isChecked){
                     if(mBlueAdapter.enable()){
                         if(!mBlueAdapter.isDiscovering()){
+                            loadindGif.setVisibility(View.VISIBLE);
                             Intent intent = new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
                             startActivityForResult(intent, REQUEST_DISCOVER_BT);
-                            getPairedDevices(false);
                             setImagesAndColorsDiscovering(true);
-                            loadindGif.setVisibility(View.VISIBLE);
+
+                            getPairedDevices(false);
                         }
 
                     } else {
@@ -198,7 +199,6 @@ public class Connection extends BaseActivity {
     }
 
     public void getPairedDevices(Boolean clearArray){
-        loadindGif.setVisibility(View.VISIBLE);
         ArrayAdapter<String> arrayAdapter = null;
 
         if(clearArray || !mBlueAdapter.isEnabled()){
