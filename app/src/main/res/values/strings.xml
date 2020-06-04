@@ -46,5 +46,13 @@
   <string name="contactSupportTeam">Fale conosco</string>
   <string name="notAbleToConnect">Não foi possível conectar</string>
   <string name="btnChangePhoto">Trocar foto</string>
+
+  <string name="select_device">Selecione um dispositivo:</string>
+  <string name="temperatura">Temperatura</string>
+  <string name="pulse">Pulso</string>
+  <string name="measure">Medir</string>
+  <string name="unavailable">Indisponível</string>
+  <string name="device">Dispositivo</string>
+  <string name="disconnected">Desconectado</string>
 </resources>
 

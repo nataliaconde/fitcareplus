@@ -106,7 +106,7 @@
             android:layout_height="33dp"
             android:background="@android:color/white"
             android:text="@string/btnChangePhoto"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/colorBlank"
             android:textSize="10sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@+id/imgUser"

@@ -135,7 +135,7 @@ public class BaseActivity extends AppCompatActivity
     } else if (id == R.id.nav_user_details) {
       changeActivity(UserDetail.class);
     } else if (id == R.id.nav_connections) {
-      changeActivity(Connection.class);
+      changeActivity(Monitor.class);
     }
 
     DrawerLayout drawer = findViewById(R.id.drawer_layout);
