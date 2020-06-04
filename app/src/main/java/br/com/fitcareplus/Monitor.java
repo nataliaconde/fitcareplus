@@ -295,6 +295,7 @@ public class Monitor extends AppCompatActivity {
     private void messageHandler(String incomingMessage) {
         HashMap<String, String> params = new HashMap();
         params.put("user", String.valueOf(ParseUser.getCurrentUser()));
+        params.put("objectId", String.valueOf(ParseUser.getCurrentUser().getObjectId()));
 
         switch (incomingMessage.charAt(0)) {
             case 'T':
