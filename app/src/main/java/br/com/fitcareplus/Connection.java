@@ -95,7 +95,7 @@ public class Connection extends BaseActivity {
             builder.setPositiveButton(getString(R.string.contactSupportTeam), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
-                    Intent intent = new Intent(Connection.this, Contact.class);
+                    Intent intent = new Intent(Connection.this, PacientDetail.class);
                     startActivity(intent);
                     finish();
                 }
