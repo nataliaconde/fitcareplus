@@ -54,5 +54,6 @@
   <string name="unavailable">Indisponível</string>
   <string name="device">Dispositivo</string>
   <string name="disconnected">Desconectado</string>
+    <string name="phone">Telefone</string>
 </resources>
 

@@ -53,10 +53,10 @@ public class ConnectedThread extends Thread{
     public void run(){
         BufferedReader buffer = new BufferedReader(new InputStreamReader(mmInStream));
 
+        notifyDeviceIsReady();
         while(true){
             try {
                 mmHandlerFactory.sendMessage(BluetoothConnectionService.INCOMING_MESSAGE, buffer.readLine());
-                notifyDeviceIsReady();
             } catch(IOException e){
                 e.printStackTrace();
                 break;

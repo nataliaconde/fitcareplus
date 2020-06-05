@@ -293,27 +293,32 @@ public class Monitor extends AppCompatActivity {
     }
 
     private void messageHandler(String incomingMessage) {
-        HashMap<String, String> params = new HashMap();
-        params.put("user", String.valueOf(ParseUser.getCurrentUser()));
-        params.put("objectId", String.valueOf(ParseUser.getCurrentUser().getObjectId()));
 
         switch (incomingMessage.charAt(0)) {
             case 'T':
                 String temperature = getMeasure(incomingMessage);
                 temperatureTextView.setText(temperature + " °C");
-                params.put("temperature", temperature);
+                sendParseCall("temperature", temperature);
                 break;
             case 'P':
                 String pulse = getMeasure(incomingMessage + " BPM");
                 pulseTextView.setText(pulse);
-                params.put("pulse", pulse);
+                sendParseCall("pulse", pulse);
                 break;
         }
+    }
 
-        ParseCloud.callFunctionInBackground("addDataMeasurement", params, new FunctionCallback<String>() {
+    private void sendParseCall(String what, String value) {
+        HashMap<String, Object> params = new HashMap<String, Object>();
+        params.put("user", String.valueOf(ParseUser.getCurrentUser()));
+        params.put("objectId", String.valueOf(ParseUser.getCurrentUser().getObjectId()));
+
+        params.put(what, value);
+
+            ParseCloud.callFunctionInBackground("addDataMeasurement", params, new FunctionCallback<String>() {
             @Override
             public void done(String object, ParseException e) {
-                if(e ==null) {
+                if(e == null) {
                     Toast.makeText(Monitor.this, object, Toast.LENGTH_LONG).show();
                 }
             }
