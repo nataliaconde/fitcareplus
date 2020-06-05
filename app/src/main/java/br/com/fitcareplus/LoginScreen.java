@@ -85,19 +85,10 @@ public class LoginScreen extends AppCompatActivity {
                   } catch (ParseException error) { }  }
 
                 editor.commit();
-                String profileType = user.get("profile").toString().trim();
-
-                if(profileType.equals("pacient")){
-                  Intent i;
-                  i = new Intent(LoginScreen.this, PacientDetail.class);
-                  i.putExtra("name", user.getUsername());
-                  startActivity(i);
-                } else {
-                  Intent i;
-                  i = new Intent(LoginScreen.this, DoctorView.class);
-                  startActivity(i);
-                }
-
+                Intent i;
+                i = new Intent(LoginScreen.this, PacientDetail.class);
+                i.putExtra("name", user.getUsername());
+                startActivity(i);
               } else {
                 Toast.makeText(LoginScreen.this, getString(R.string.errorLoginParse), Toast.LENGTH_LONG).show();
               }

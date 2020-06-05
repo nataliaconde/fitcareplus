@@ -127,11 +127,7 @@ public class BaseActivity extends AppCompatActivity
     ParseUser user = ParseUser.getCurrentUser();
     int id = item.getItemId();
     if (id == R.id.nav_home) {
-      if(user != null && user.get("profile").equals("doctor")){
-        changeActivity(DoctorView.class);
-      } else {
-        changeActivity(PacientDetail.class);
-      }
+      changeActivity(PacientDetail.class);
     } else if (id == R.id.nav_user_details) {
       changeActivity(UserDetail.class);
     } else if (id == R.id.nav_connections) {

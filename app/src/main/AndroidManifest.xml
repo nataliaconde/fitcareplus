@@ -43,13 +43,7 @@
             android:name=".Connection"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Contact"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".UserDetail"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".DoctorView"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ResetPassword"
